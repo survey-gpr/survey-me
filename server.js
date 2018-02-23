@@ -8,6 +8,8 @@ app.use(function (req, res, next) {
     next();
 });
 
+app.use(express.static('/'));
+
 app.get('/', function (req, res, next) {
     // Handle the get for this route
     console.log('GET METHOD');
