@@ -1,0 +1,19 @@
+<uku-component>
+    <template>
+        <h3>{{cc.page.title}}</h3>
+        <question-detail uku-repeat="question in cc.page.questions" uku-question-item="question"></question-detail>
+    </template>
+    <script>
+        (function () {
+            return function (uku) {
+                Object.defineProperty(this, 'selectedPage', {
+                    set: function (value) {
+                        if (value) {
+                            this.page = value;
+                        }
+                    }
+                });
+            };
+        })()
+    </script>
+</uku-component>

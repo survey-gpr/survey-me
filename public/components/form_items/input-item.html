@@ -1,0 +1,28 @@
+<uku-component>
+    <template>
+        <div class="form-group">
+            <span>
+                <label>{{cc.item.index}}</label>
+                <label>{{cc.item.question}}</label>
+            </span>
+            <input class="form-control" uku-type="cc.item.realType" uku-value="cc.item.value" style="width:30%">
+        </div>
+    </template>
+    <script>
+        (function () {
+            return function (uku) {
+                Object.defineProperty(this, 'formItem', {
+                    set: function (value) {
+                        if (value) {
+                            if (value.type.search('input-') > -1) {
+                                var realType = value.type.split('-')[1];
+                                value.realType = realType;
+                            }
+                            this.item = value;
+                        }
+                    }
+                });
+            };
+        })()
+    </script>
+</uku-component>

@@ -1,0 +1,34 @@
+<uku-component>
+    <template>
+        <div class="form-group">
+            <span>
+                <label>{{cc.item.index}}</label>
+                <label>{{cc.item.question}}</label>
+            </span>
+            <select class="form-control" uku-selected="cc.selectedOption|value" style="width:20%">
+                <option value="" disabled></option>
+                <option uku-repeat="op in cc.item.options" uku-value="op.value" uku-data-item="op">{{op.value}}</option>
+            </select>
+        </div>
+    </template>
+    <script>
+        (function () {
+            return function (uku) {
+                this.selectedOption = '';
+                Object.defineProperty(this, 'formItem', {
+                    set: function (value) {
+                        if (value) {
+                            this.item = value;
+                            var optionObjectArrary = [];
+                            for(var i=0;i<this.item.options.length;i++){
+                                optionObjectArrary.push({value:this.item.options[i]});
+                            }
+                            this.item.options = optionObjectArrary;
+                            //this.selectedOption = this.item.options[0];
+                        }
+                    }
+                });
+            };
+        })()
+    </script>
+</uku-component>

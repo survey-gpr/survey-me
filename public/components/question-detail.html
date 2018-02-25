@@ -1,0 +1,29 @@
+<uku-component>
+    <template>
+        <form></form>
+    </template>
+    <script>
+        (function () {
+            return function (uku) {
+                this.dynamicId = this._alias;
+                Object.defineProperty(this, 'questionItem', {
+                    set: function (value) {
+                        if (value) {
+                            this.question = value;
+                            var container = this._dom;
+                            var formItem;
+                            if (this.question.type === 'select') {
+                                formItem = document.createElement("selector");                   
+                            }else{
+                                formItem = document.createElement("input-item");
+                            }       
+                            container.appendChild(formItem);
+                            formItem.setAttribute('uku-form-item', this._alias+'.question');
+                            //uku.handleElement(formItem);          
+                        }
+                    }
+                });
+            };
+        })()
+    </script>
+</uku-component>

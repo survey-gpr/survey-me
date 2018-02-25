@@ -1,0 +1,39 @@
+<uku-component>
+    <template>
+        <page-detail uku-selected-page="cc.selectedPage"></page-detail>
+        <div class="center-block" style="width:200px">
+            <button class="btn btn-lg btn-success" uku-onclick="cc.prevousPage()">上一页</button>
+            <button class="btn btn-lg btn-success" uku-onclick="cc.nextPage()">下一页</button>
+        </div>
+    </template>
+    <script>
+        (function(){
+            return function(uku){
+                this.currentPageIndex = 0;
+                this.selectedPage = {};
+                this.prevousPage = function(){
+                    if(this.currentPageIndex > 0){
+                        this.currentPageIndex--;
+                    }
+                    this.selectedPage = this.pages[this.currentPageInde];      
+                };
+
+                this.nextPage = function(){
+                    if(this.currentPageIndex < this.pages.length-1){
+                        this.currentPageIndex++
+                    }       
+                    this.selectedPage = this.pages[this.currentPageInde];     
+                };
+
+                Object.defineProperty(this, 'allPages', {
+                    set: function (value) {
+                        if (value) {
+                            this.pages = value;
+                            this.selectedPage = this.pages[this.currentPageIndex];
+                        }
+                    }
+                });
+            };
+        })()
+    </script>
+</uku-component>

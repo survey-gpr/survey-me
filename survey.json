@@ -1,0 +1,176 @@
+{
+    "pages": [
+        {
+            "title": "关于您家庭的基本情况",
+            "questions":[
+                {
+                    "index":"1",
+                    "question": "宝宝姓名",
+                    "required": true,
+                    "type": "input-text",
+                    "value": ""
+                },
+                {
+                    "index":"2",
+                    "question": "宝宝性别",
+                    "required": true,
+                    "type": "select",
+                    "options":["男","女"]
+                },
+                {
+                    "index":"3",
+                    "question": "宝宝的出生年月",
+                    "required": true,
+                    "type": "input-date"
+                },
+                {
+                    "index":"4",
+                    "question": "妈妈的年龄",
+                    "required": true,
+                    "type": "input-number"
+                },
+                {
+                    "index":"5",
+                    "question": "妈妈的工作类型",
+                    "required": true,
+                    "type": "select",
+                    "options":[
+                                "正式工（每周工作时间固定）",
+                                "临时工（每周工作时间不固定）",
+                                "个体经营者",
+                                "在家工作者",
+                                "学生",
+                                "不工作",
+                                "产假、育儿假、或病假中",
+                                "其他"
+                            ]
+                },
+                {
+                    "index":"6",
+                    "question": "母亲的工作时间（例：9点--17点）",
+                    "required": true,
+                    "type": "input-text",
+                    "value": ""
+                },
+                {
+                    "index":"7",
+                    "question": "妈妈回到家的时间",
+                    "required": true,
+                    "type": "select",
+                    "options":[
+                        "15点以前",
+                        "15～16点",
+                        "16～17点",
+                        "17～18点",
+                        "18～19点",
+                        "19～20点",
+                        "20～21点",
+                        "21～22点",
+                        "22点以后",
+                        "其他"
+                    ]
+                },
+                {
+                    "index":"8",
+                    "question": "爸爸的年龄",
+                    "required": true,
+                    "type": "input-number"
+                },
+                {
+                    "index":"9",
+                    "question": "爸爸的工作类型",
+                    "required": true,
+                    "type": "select",
+                    "options":[
+                                "正式工（每周工作时间固定）",
+                                "临时工（每周工作时间不固定）",
+                                "个体经营者",
+                                "在家工作者",
+                                "学生",
+                                "不工作",
+                                "育儿假、或病假中",
+                                "其他"
+                            ]
+                },
+                {
+                    "index":"10",
+                    "question": "爸爸的工作时间（例：9点--17点）",
+                    "required": true,
+                    "type": "input-text",
+                    "value": ""
+                },
+                {
+                    "index":"11",
+                    "question": "爸爸回到家的时间",
+                    "required": true,
+                    "type": "select",
+                    "options":[
+                        "15点以前",
+                        "15～16点",
+                        "16～17点",
+                        "17～18点",
+                        "18～19点",
+                        "19～20点",
+                        "20～21点",
+                        "21～22点",
+                        "22点以后",
+                        "其他"
+                    ]
+                },
+                {
+                    "index":"12",
+                    "question": "妈妈的产假时间",
+                    "required": true,
+                    "type": "select",
+                    "options":[
+                        "半年以下",
+                        "半年～1年",
+                        "1年～2年",
+                        "2年～3年",
+                        "3年以上"
+                    ]
+                },
+                {
+                    "index":"13",
+                    "question": "您的家庭年收入",
+                    "required": true,
+                    "type": "select",
+                    "options":[
+                        "4万以下",
+                        "4-6万",
+                        "6-8万",
+                        "8-10万",
+                        "10-12万",
+                        "12-16万",
+                        "16-20万",
+                        "20-24万",
+                        "24-28万",
+                        "28-32万",
+                        "32-36万",
+                        "36-40万",
+                        "40万以上"
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "关于祖父母育儿参与的情况",
+            "questions":[
+                {
+                    "index": "14",
+                    "question": "关于祖父母的年龄、职业。",
+                    "required": true,
+                    "type": "table",
+                    "table":{
+                        "header": ["","年龄","职业"],
+                        "columns": [
+                            {
+                                
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}
