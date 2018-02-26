@@ -58,10 +58,11 @@ export class BoundItemRepeat extends BoundItemBase{
 
         function generateTempContainer():HTMLElement{
             let index = UkuleleUtil.searchHtmlTag(self.renderTemplate,"tr");
-            if(index === -1){
-                return document.createElement("div");
-            }else{
+            let index2 = UkuleleUtil.searchHtmlTag(self.renderTemplate,"th");
+            if(index === -1 || index2 === -1 ){
                 return document.createElement("tbody");
+            }else{
+                return document.createElement("div");
             }
         }
 
@@ -87,7 +88,7 @@ export class BoundItemRepeat extends BoundItemBase{
                     }
                 }
 
-                let child:HTMLElement = commentNode.nextSibling as HTMLElement;
+                let child:HTMLElement = (commentNode as HTMLElement).nextElementSibling as HTMLElement;
                 for (let j = 0; j < finalValue.length; j++) {
                     child.removeAttribute("uku-repeat");
                     var Uku_Clazz = (<any>this.uku).constructor;

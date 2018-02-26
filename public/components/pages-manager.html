@@ -15,14 +15,14 @@
                     if(this.currentPageIndex > 0){
                         this.currentPageIndex--;
                     }
-                    this.selectedPage = this.pages[this.currentPageInde];      
+                    this.selectedPage = this.pages[this.currentPageIndex];      
                 };
 
                 this.nextPage = function(){
                     if(this.currentPageIndex < this.pages.length-1){
-                        this.currentPageIndex++
+                        this.currentPageIndex++;
                     }       
-                    this.selectedPage = this.pages[this.currentPageInde];     
+                    this.selectedPage = this.pages[this.currentPageIndex];     
                 };
 
                 Object.defineProperty(this, 'allPages', {

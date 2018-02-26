@@ -162,11 +162,28 @@
                     "required": true,
                     "type": "table",
                     "table":{
-                        "header": ["","年龄","职业"],
-                        "columns": [
-                            {
-                                
-                            }
+                        "headers":["","年龄","职业"],
+                        "rows":[
+                            [
+                                {"question":"外公","type":"label"},
+                                {"question":"年龄","type": "select","options": ["60岁以下","60～70岁","70岁～80岁","80岁以上"],"value":""},
+                                {"question":"职业","type": "select","options": ["在职","无业或已退休"],"value":""}
+                            ],
+                            [
+                                {"question":"外婆","type":"label"},
+                                {"question":"年龄","type": "select","options": ["60岁以下","60～70岁","70岁～80岁","80岁以上"],"value":""},
+                                {"question":"职业","type": "select","options": ["在职","无业或已退休"],"value":""}
+                            ],
+                            [
+                                {"question":"爷爷","type":"label"},
+                                {"question":"年龄","type": "select","options": ["60岁以下","60～70岁","70岁～80岁","80岁以上"],"value":""},
+                                {"question":"职业","type": "select","options": ["在职","无业或已退休"],"value":""}
+                            ],
+                            [
+                                {"question":"奶奶","type":"label"},
+                                {"question":"年龄","type": "select","options": ["60岁以下","60～70岁","70岁～80岁","80岁以上"],"value":""},
+                                {"question":"职业","type": "select","options": ["在职","无业或已退休"],"value":""}
+                            ]
                         ]
                     }
                 }

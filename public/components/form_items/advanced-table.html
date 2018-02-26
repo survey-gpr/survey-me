@@ -1,0 +1,38 @@
+<uku-component>
+    <template>
+        <table class="table table-hover" style="width:50%">
+            <thead>
+                <tr>
+                    <th uku-repeat="header in cc.headers">{{header}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr uku-repeat="row in cc.rows">
+                    <td uku-repeat="column in row">
+                        <!-- <question-detail uku-form-item="column"></question-detail> -->
+                        <selector-simple uku-form-item="column"></selector-simple>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </template>
+    <script>
+        (function () {
+            return function (uku) {
+                this.selectedOption = '';
+                this.headers = [];
+                this.rows = [];
+                Object.defineProperty(this, 'formItem', {
+                    set: function (value) {
+                        if (value) {
+                            this.item = value;
+                            var table = this.item.table;
+                            this.headers = table.headers;
+                            this.rows = table.rows;
+                        }
+                    }
+                });
+            };
+        })()
+    </script>
+</uku-component>

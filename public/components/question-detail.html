@@ -14,6 +14,8 @@
                             var formItem;
                             if (this.question.type === 'select') {
                                 formItem = document.createElement("selector");                   
+                            }else if(this.question.type === 'table'){
+                                formItem = document.createElement("advanced-table");
                             }else{
                                 formItem = document.createElement("input-item");
                             }       
