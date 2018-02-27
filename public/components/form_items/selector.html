@@ -5,25 +5,34 @@
                 <label>{{cc.item.index}}</label>
                 <label>{{cc.item.question}}</label>
             </span>
-            <select class="form-control" uku-selected="cc.selectedOption|value" style="width:20%">
+            <select class="form-control" uku-selected="cc.selectedOption|value" uku-onchange="cc.changed()" style="width:20%">
                 <option value="" disabled></option>
-                <option uku-repeat="op in cc.item.options" uku-value="op.value" uku-data-item="op">{{op.value}}</option>
+                <option uku-repeat="op in cc.optionObjectArrary" uku-value="op.value" uku-data-item="op">{{op.value}}</option>
             </select>
         </div>
     </template>
     <script>
         (function () {
             return function (uku) {
-                this.selectedOption = '';
+                this.selectedOption = {value:""};
+                this.optionObjectArrary = [];
+                this.changed = function(){
+                    this.item.value = this.selectedOption.value;
+                };
                 Object.defineProperty(this, 'formItem', {
                     set: function (value) {
                         if (value) {
                             this.item = value;
                             var optionObjectArrary = [];
                             for(var i=0;i<this.item.options.length;i++){
-                                optionObjectArrary.push({value:this.item.options[i]});
+                                var opItem = {value:this.item.options[i]};
+                                this.optionObjectArrary.push(opItem);
+                                if(this.item.value === this.item.options[i]){
+                                    this.selectedOption = opItem;
+                                }
                             }
-                            this.item.options = optionObjectArrary;
+                            
+                            //this.item.options = optionObjectArrary;
                             //this.selectedOption = this.item.options[0];
                         }
                     }

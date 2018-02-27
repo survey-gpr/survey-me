@@ -1,20 +1,26 @@
 <uku-component>
     <template>
-        <table class="table table-hover" style="width:50%">
-            <thead>
-                <tr>
-                    <th uku-repeat="header in cc.headers">{{header}}</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr uku-repeat="row in cc.rows">
-                    <td uku-repeat="column in row">
-                        <!-- <question-detail uku-form-item="column"></question-detail> -->
-                        <selector-simple uku-form-item="column"></selector-simple>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="form-group">
+            <span>
+                <label>{{cc.item.index}}</label>
+                <label>{{cc.item.question}}</label>
+            </span>
+            <table class="table table-hover" style="width:50%">
+                <thead>
+                    <tr>
+                        <th uku-repeat="header in cc.headers">{{header}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr uku-repeat="row in cc.rows">
+                        <td uku-repeat="column in row">
+                            <!-- <question-detail uku-form-item="column"></question-detail> -->
+                            <selector-simple uku-form-item="column"></selector-simple>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </template>
     <script>
         (function () {

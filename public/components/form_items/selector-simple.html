@@ -13,23 +13,29 @@
     <script>
         (function () {
             return function (uku) {
-                this.selectedOption = '';
+                this.selectedOption = {};
                 this.labelMode = false;
                 this.optionObjectArrary = [];
-                this.changed = function(){
+                this.changed = function () {
                     this.item.value = this.selectedOption.value;
                 };
                 Object.defineProperty(this, 'formItem', {
                     set: function (value) {
                         if (value) {
                             this.item = value;
-                            if(this.item.type === "label"){
+                            if (this.item.type === "label") {
                                 this.labelMode = true;
-                            }else{
+                            } else {
                                 this.labelMode = false;
                                 this.optionObjectArrary = [];
-                                for(var i=0;i<this.item.options.length;i++){
-                                    this.optionObjectArrary.push({value:this.item.options[i]});
+                                for (var i = 0; i < this.item.options.length; i++) {
+                                    var opItem = {
+                                        value: this.item.options[i]
+                                    };
+                                    this.optionObjectArrary.push(opItem);
+                                    if (this.item.value === this.item.options[i]) {
+                                        this.selectedOption = opItem;
+                                    }
                                 }
                             }
                         }
