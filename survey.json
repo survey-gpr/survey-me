@@ -161,7 +161,7 @@
                     "index": "14",
                     "question": "关于祖父母的年龄、职业。",
                     "required": true,
-                    "type": "table",
+                    "type": "table-select",
                     "table":{
                         "headers":["","年龄","职业"],
                         "rows":[
@@ -184,6 +184,103 @@
                                 {"question":"奶奶","type":"label"},
                                 {"question":"奶奶-年龄","type": "select","options": ["60岁以下","60～70岁","70岁～80岁","80岁以上"],"value":""},
                                 {"question":"奶奶-职业","type": "select","options": ["在职","无业或已退休"],"value":""}
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "index": "15",
+                    "question": "祖父母的居住情况（祖父母家离您孩子居住地的距离）",
+                    "required": true,
+                    "type": "table-select",
+                    "table":{
+                        "headers":["","居住距离"],
+                        "rows":[
+                            [
+                                {"question":"外公","type":"label"},
+                                {"question":"外公-居住距离","type": "select","options": ["和孩子同住","徒步15分钟以内","徒步15～30分钟","一般交通工具10分钟以内（如自行车、摩托车、汽车等）","一般交通工具10～30分钟","一般交通工具30～60分钟","一般交通工具60分钟以上","需要利用火车・飞机等远距离"],"value":""}
+                            ],
+                            [
+                                {"question":"外婆","type":"label"},
+                                {"question":"外婆-居住距离","type": "select","options": ["和孩子同住","徒步15分钟以内","徒步15～30分钟","一般交通工具10分钟以内（如自行车、摩托车、汽车等）","一般交通工具10～30分钟","一般交通工具30～60分钟","一般交通工具60分钟以上","需要利用火车・飞机等远距离"],"value":""}
+                            ],
+                            [
+                                {"question":"爷爷","type":"label"},
+                                {"question":"爷爷-居住距离","type": "select","options": ["和孩子同住","徒步15分钟以内","徒步15～30分钟","一般交通工具10分钟以内（如自行车、摩托车、汽车等）","一般交通工具10～30分钟","一般交通工具30～60分钟","一般交通工具60分钟以上","需要利用火车・飞机等远距离"],"value":""}
+                            ],
+                            [
+                                {"question":"奶奶","type":"label"},
+                                {"question":"奶奶-居住距离","type": "select","options": ["和孩子同住","徒步15分钟以内","徒步15～30分钟","一般交通工具10分钟以内（如自行车、摩托车、汽车等）","一般交通工具10～30分钟","一般交通工具30～60分钟","一般交通工具60分钟以上","需要利用火车・飞机等远距离"],"value":""}
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "index": "16",
+                    "question": "平时祖父母与您孩子的接触频率",
+                    "required": true,
+                    "type": "table-select",
+                    "table":{
+                        "headers":["","接触频率"],
+                        "rows":[
+                            [
+                                {"question":"外公","type":"label"},
+                                {"question":"外公-接触频率","type": "select","options": ["每天","每隔两三天","每周一次","两周一次","每月一次","有特殊活动时（如节假日、孩子生日等）","基本没什么接触","完全没接触","已离世"],"value":""}
+                            ],
+                            [
+                                {"question":"外婆","type":"label"},
+                                {"question":"外婆-接触频率","type": "select","options": ["每天","每隔两三天","每周一次","两周一次","每月一次","有特殊活动时（如节假日、孩子生日等）","基本没什么接触","完全没接触","已离世"],"value":""}
+                            ],
+                            [
+                                {"question":"爷爷","type":"label"},
+                                {"question":"爷爷-接触频率","type": "select","options": ["每天","每隔两三天","每周一次","两周一次","每月一次","有特殊活动时（如节假日、孩子生日等）","基本没什么接触","完全没接触","已离世"],"value":""}
+                            ],
+                            [
+                                {"question":"奶奶","type":"label"},
+                                {"question":"奶奶-接触频率","type": "select","options": ["每天","每隔两三天","每周一次","两周一次","每月一次","有特殊活动时（如节假日、孩子生日等）","基本没什么接触","完全没接触","已离世"],"value":""}
+                            ]
+                        ]
+                    }
+                },
+                {
+                    "index": "17",
+                    "question": "祖父母分别在育儿方面提供了多大的帮助？请根据实际情况分别选择合适的回答。",
+                    "required": true,
+                    "type": "table-radio",
+                    "table":{
+                        "headers":["","完全没帮助","帮助较少","帮助较多","帮助很大","已离世"],
+                        "rows":[
+                            [
+                                {"question":"外公","type":"label","value":""},
+                                {"question":"外公","type": "input-radio","name":"外公","value":"完全没帮助"},
+                                {"question":"外公","type": "input-radio","name":"外公","value":"帮助较少"},
+                                {"question":"外公","type": "input-radio","name":"外公","value":"帮助较多"},
+                                {"question":"外公","type": "input-radio","name":"外公","value":"帮助很大"},
+                                {"question":"外公","type": "input-radio","name":"外公","value":"已离世"}
+                            ],
+                            [
+                                {"question":"外婆","type":"label"},
+                                {"question":"外婆","type": "input-radio","name":"外婆","value":"完全没帮助"},
+                                {"question":"外婆","type": "input-radio","name":"外婆","value":"帮助较少"},
+                                {"question":"外婆","type": "input-radio","name":"外婆","value":"帮助较多"},
+                                {"question":"外婆","type": "input-radio","name":"外婆","value":"帮助很大"},
+                                {"question":"外婆","type": "input-radio","name":"外婆","value":"已离世"}
+                            ],
+                            [
+                                {"question":"爷爷","type":"label"},
+                                {"question":"爷爷","type": "input-radio","name":"爷爷","value":"完全没帮助"},
+                                {"question":"爷爷","type": "input-radio","name":"爷爷","value":"帮助较少"},
+                                {"question":"爷爷","type": "input-radio","name":"爷爷","value":"帮助较多"},
+                                {"question":"爷爷","type": "input-radio","name":"爷爷","value":"帮助很大"},
+                                {"question":"爷爷","type": "input-radio","name":"爷爷","value":"已离世"}
+                            ],
+                            [
+                                {"question":"奶奶","type":"label"},
+                                {"question":"奶奶","type": "input-radio","name":"奶奶","value":"完全没帮助"},
+                                {"question":"奶奶","type": "input-radio","name":"奶奶","value":"帮助较少"},
+                                {"question":"奶奶","type": "input-radio","name":"奶奶","value":"帮助较多"},
+                                {"question":"奶奶","type": "input-radio","name":"奶奶","value":"帮助很大"},
+                                {"question":"奶奶","type": "input-radio","name":"奶奶","value":"已离世"}
                             ]
                         ]
                     }

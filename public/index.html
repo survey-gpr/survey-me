@@ -47,7 +47,9 @@
     uku.registerComponent('input-item', 'components/form_items/input-item.html');
     uku.registerComponent('selector', 'components/form_items/selector.html');
     uku.registerComponent('selector-simple', 'components/form_items/selector-simple.html');
+    uku.registerComponent('input-item-simple', 'components/form_items/input-item-simple.html');
     uku.registerComponent('advanced-table', 'components/form_items/advanced-table.html');
+    uku.registerComponent('advanced-table2', 'components/form_items/advanced-table2.html');
     var appCtrl = new ApplicationController(uku);
     uku.registerController('appCtrl', appCtrl);
     uku.addListener(Ukulele.INITIALIZED, function () {
@@ -59,6 +61,7 @@
 
     route = new RouteController("viewContainer");
     route.default("#main", "pages/main.html")
+        .when("#result","pages/finish.html")
         .when("#admin", "pages/admin.html")
         .otherwise("pages/main.html");
     route.onRouteChange = function (page) {
@@ -74,7 +77,7 @@
         $.get('/questions', function (result) {
           if (result) {
             //console.log(JSON.stringify(result));
-            appCtrl.pages = result.pages;
+            appCtrl.question = result;
             uku.refresh('appCtrl');
           }
         });

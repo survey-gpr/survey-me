@@ -1,39 +1,69 @@
 <uku-component>
     <template>
-        <page-detail uku-selected-page="cc.selectedPage"></page-detail>
-        <div class="center-block" style="width:200px">
-            <button class="btn btn-lg btn-success" uku-onclick="cc.prevousPage()">上一页</button>
-            <button class="btn btn-lg btn-success" uku-onclick="cc.nextPage()">下一页</button>
+        <div class="center-block" style="width:800px">
+            <page-detail uku-selected-page="cc.selectedPage"></page-detail>
+            <button uku-render="!(cc.isFirstPage())" class="btn btn-lg btn-success" uku-onclick="cc.prevousPage()">上一页</button>
+            <button uku-render="!(cc.isLastPage())" class="btn btn-lg btn-success" uku-onclick="cc.nextPage()">下一页</button>
+            <button uku-render="cc.isLastPage()" class="btn btn-lg btn-success" uku-onclick="cc.submit()">提 交</button>
         </div>
     </template>
     <script>
-        (function(){
-            return function(uku){
+        (function (jq) {
+            return function (uku) {
                 this.currentPageIndex = 0;
                 this.selectedPage = {};
-                this.prevousPage = function(){
-                    if(this.currentPageIndex > 0){
+                this.prevousPage = function () {
+                    if (this.currentPageIndex > 0) {
                         this.currentPageIndex--;
                     }
-                    this.selectedPage = this.pages[this.currentPageIndex];      
+                    this.selectedPage = this.pages[this.currentPageIndex];
                 };
 
-                this.nextPage = function(){
-                    if(this.currentPageIndex < this.pages.length-1){
+                this.nextPage = function () {
+                    if (this.currentPageIndex < this.pages.length - 1) {
                         this.currentPageIndex++;
-                    }       
-                    this.selectedPage = this.pages[this.currentPageIndex];     
+                    }
+                    this.selectedPage = this.pages[this.currentPageIndex];
                 };
 
-                Object.defineProperty(this, 'allPages', {
+                this.isFirstPage = function(){
+                    if(this.pages && this.currentPageIndex === 0){
+                        return true;
+                    }
+                    return false;
+                };
+
+                this.isLastPage = function(){
+                    if(this.pages && this.currentPageIndex === this.pages.length - 1){
+                        return true;
+                    }
+                    return false;
+                };
+
+                this.submit = function () {
+                    $.ajax({
+                        method: "POST",
+                        url: "/questions",
+                        data: JSON.stringify(this.question),
+                        contentType: "application/json; charset=utf-8",
+                        dataType: 'json',
+                        success: function(result){
+                            alert('successfully');
+                            location.assign('#result');
+                        }
+                    })
+                };
+
+                Object.defineProperty(this, 'mainQuestion', {
                     set: function (value) {
                         if (value) {
-                            this.pages = value;
+                            this.question = value;
+                            this.pages = this.question.pages;
                             this.selectedPage = this.pages[this.currentPageIndex];
                         }
                     }
                 });
             };
-        })()
+        })($)
     </script>
 </uku-component>

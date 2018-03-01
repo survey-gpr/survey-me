@@ -10,6 +10,28 @@ var connection = mysql.createConnection({
 
 
 function SurveyDAO() {
+    this.list = function(){
+        return new Promise(function(resolve, reject){
+            connection.connect(function (err) {
+                if (err) {
+                    console.error('error connecting: ' + err.stack);
+                    reject(err);
+                }
+                console.log('connected as id ' + connection.threadId);
+            });
+
+            connection.query('SELECT * FROM survey', function (error, results, fields) {
+                connection.end();
+                if (error) {
+                    console.error('error insert: ' + error.stack);
+                    reject(error);
+                }
+                else{
+                    resolve(results);
+                }
+            });
+        });
+    };
     this.save = function (question) {
         return new Promise(function (resolve, reject) {
             connection.connect(function (err) {
@@ -19,24 +41,27 @@ function SurveyDAO() {
                 }
                 console.log('connected as id ' + connection.threadId);
             });
-
-            var surveyJSON = fs.readFileSync('./survey.json', 'utf8');
-            var surveyModel = JSON.parse(surveyJSON);
+            
             let re = {
-                title: surveyModel.title,
-                question: surveyJSON,
+                title: question.title,
+                question: JSON.stringify(question),
                 create_date: new Date()
             };
             connection.query('INSERT INTO survey SET ?', re, function (error, results, fields) {
+                connection.end();
                 if (error) {
-                    console.error('error insert: ' + err.stack);
-                    reject(err);
+                    console.error('error insert: ' + error.stack);
+                    reject(error);
+                }else{
+                    resolve();
                 }
+                
             });
-            connection.end();
-            resolve();
+            
         });
     };
 }
 
-moudle.exports = new SurveyDAO();
+var surveyDAO = new SurveyDAO();
+
+module.exports = surveyDAO;
