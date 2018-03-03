@@ -1,0 +1,25 @@
+<uku-component>
+    <template>
+        <input type="radio" uku-name="cc.item.name" uku-value="cc.item.question" uku-selected="cc.selectedOption.value">    
+    </template>
+    <script>
+        (function () {
+            return function (uku) {
+                Object.defineProperty(this, 'formItem', {
+                    set: function (value) {
+                        if (value) {
+                            this.item = value;
+                        }
+                    }
+                });
+                Object.defineProperty(this, 'selectedItem', {
+                    set: function (value) {
+                        if (value) {
+                            this.selectedOption = value;
+                        }
+                    }
+                });
+            };
+        })()
+    </script>
+</uku-component>

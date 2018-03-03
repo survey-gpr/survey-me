@@ -3,6 +3,7 @@
     "pages": [
         {
             "title": "关于您家庭的基本情况",
+            "description": "",
             "questions":[
                 {
                     "index":"1",
@@ -156,6 +157,7 @@
         },
         {
             "title": "关于祖父母育儿参与的情况",
+            "description": "",
             "questions":[
                 {
                     "index": "14",
@@ -249,41 +251,239 @@
                     "type": "table-radio",
                     "table":{
                         "headers":["","完全没帮助","帮助较少","帮助较多","帮助很大","已离世"],
+                        "rows":[                        
+                            {
+                                "question":"外公",
+                                "value":"",
+                                "options":[
+                                    {"question":"外公-完全没帮助","name":"外公"},
+                                    {"question":"外公-帮助较少","name":"外公"},
+                                    {"question":"外公-帮助较多","name":"外公"},
+                                    {"question":"外公-帮助很大","name":"外公"},
+                                    {"question":"外公-已离世","name":"外公"}
+                                ]
+                            },
+                            {
+                                "question":"外婆",
+                                "value":"",
+                                "options":[
+                                    {"question":"外婆-完全没帮助","name":"外婆"},
+                                    {"question":"外婆-帮助较少","name":"外婆"},
+                                    {"question":"外婆-帮助较多","name":"外婆"},
+                                    {"question":"外婆-帮助很大","name":"外婆"},
+                                    {"question":"外婆-已离世","name":"外婆"}
+                                ]
+                            },
+                            {
+                                "question":"爷爷",
+                                "value":"",
+                                "options":[
+                                    {"question":"爷爷-完全没帮助","name":"爷爷"},
+                                    {"question":"爷爷-帮助较少","name":"爷爷"},
+                                    {"question":"爷爷-帮助较多","name":"爷爷"},
+                                    {"question":"爷爷-帮助很大","name":"爷爷"},
+                                    {"question":"爷爷-已离世","name":"爷爷"}
+                                ]
+                            },
+                            {
+                                "question":"奶奶",
+                                "value":"",
+                                "options":[
+                                    {"question":"奶奶-完全没帮助","name":"奶奶"},
+                                    {"question":"奶奶-帮助较少","name":"奶奶"},
+                                    {"question":"奶奶-帮助较多","name":"奶奶"},
+                                    {"question":"奶奶-帮助很大","name":"奶奶"},
+                                    {"question":"奶奶-已离世","name":"奶奶"}
+                                ]
+                            }                      
+                        ]
+                    }
+                },
+                {
+                    "index": "18",
+                    "question": "平时祖父母在育儿方面提供了哪些帮助？（可多选）",
+                    "required": true,
+                    "type": "table-checkbox",
+                    "table":{
+                        "headers":["","帮助程度","帮忙做家务","托儿所/早教机构的接送","孩子生病时照顾孩","节假日带孩子玩","提供育儿知识或经验","经济上支援","没任何帮助","已离世"],
                         "rows":[
                             [
-                                {"question":"外公","type":"label","value":""},
-                                {"question":"外公","type": "input-radio","name":"外公","value":"完全没帮助"},
-                                {"question":"外公","type": "input-radio","name":"外公","value":"帮助较少"},
-                                {"question":"外公","type": "input-radio","name":"外公","value":"帮助较多"},
-                                {"question":"外公","type": "input-radio","name":"外公","value":"帮助很大"},
-                                {"question":"外公","type": "input-radio","name":"外公","value":"已离世"}
+                                {"question":"外公","type":"label"},
+                                {"question":"外公-帮助程度","type": "input-checkbox","value":false},
+                                {"question":"外公-帮忙做家务","type": "input-checkbox","value":false},
+                                {"question":"外公-托儿所/早教机构的接送","type": "input-checkbox","value":false},
+                                {"question":"外公-孩子生病时照顾孩","type": "input-checkbox","value":false},
+                                {"question":"外公-节假日带孩子玩","type": "input-checkbox","value":false},
+                                {"question":"外公-提供育儿知识或经验","type": "input-checkbox","value":false},
+                                {"question":"外公-经济上支援","type": "input-checkbox","value":false},
+                                {"question":"外公-没任何帮助","type": "input-checkbox","value":false},
+                                {"question":"外公-已离世","type": "input-checkbox","value":false}
                             ],
                             [
                                 {"question":"外婆","type":"label"},
-                                {"question":"外婆","type": "input-radio","name":"外婆","value":"完全没帮助"},
-                                {"question":"外婆","type": "input-radio","name":"外婆","value":"帮助较少"},
-                                {"question":"外婆","type": "input-radio","name":"外婆","value":"帮助较多"},
-                                {"question":"外婆","type": "input-radio","name":"外婆","value":"帮助很大"},
-                                {"question":"外婆","type": "input-radio","name":"外婆","value":"已离世"}
+                                {"question":"外婆-帮助程度","type": "input-checkbox","value":false},
+                                {"question":"外婆-帮忙做家务","type": "input-checkbox","value":false},
+                                {"question":"外婆-托儿所/早教机构的接送","type": "input-checkbox","value":false},
+                                {"question":"外婆-孩子生病时照顾孩","type": "input-checkbox","value":false},
+                                {"question":"外婆-节假日带孩子玩","type": "input-checkbox","value":false},
+                                {"question":"外婆-提供育儿知识或经验","type": "input-checkbox","value":false},
+                                {"question":"外婆-经济上支援","type": "input-checkbox","value":false},
+                                {"question":"外婆-没任何帮助","type": "input-checkbox","value":false},
+                                {"question":"外婆-已离世","type": "input-checkbox","value":false}
                             ],
                             [
                                 {"question":"爷爷","type":"label"},
-                                {"question":"爷爷","type": "input-radio","name":"爷爷","value":"完全没帮助"},
-                                {"question":"爷爷","type": "input-radio","name":"爷爷","value":"帮助较少"},
-                                {"question":"爷爷","type": "input-radio","name":"爷爷","value":"帮助较多"},
-                                {"question":"爷爷","type": "input-radio","name":"爷爷","value":"帮助很大"},
-                                {"question":"爷爷","type": "input-radio","name":"爷爷","value":"已离世"}
+                                {"question":"爷爷-帮助程度","type": "input-checkbox","value":false},
+                                {"question":"爷爷-帮忙做家务","type": "input-checkbox","value":false},
+                                {"question":"爷爷-托儿所/早教机构的接送","type": "input-checkbox","value":false},
+                                {"question":"爷爷-孩子生病时照顾孩","type": "input-checkbox","value":false},
+                                {"question":"爷爷-节假日带孩子玩","type": "input-checkbox","value":false},
+                                {"question":"爷爷-提供育儿知识或经验","type": "input-checkbox","value":false},
+                                {"question":"爷爷-经济上支援","type": "input-checkbox","value":false},
+                                {"question":"爷爷-没任何帮助","type": "input-checkbox","value":false},
+                                {"question":"爷爷-已离世","type": "input-checkbox","value":false}
                             ],
                             [
                                 {"question":"奶奶","type":"label"},
-                                {"question":"奶奶","type": "input-radio","name":"奶奶","value":"完全没帮助"},
-                                {"question":"奶奶","type": "input-radio","name":"奶奶","value":"帮助较少"},
-                                {"question":"奶奶","type": "input-radio","name":"奶奶","value":"帮助较多"},
-                                {"question":"奶奶","type": "input-radio","name":"奶奶","value":"帮助很大"},
-                                {"question":"奶奶","type": "input-radio","name":"奶奶","value":"已离世"}
+                                {"question":"奶奶-帮助程度","type": "input-checkbox","value":false},
+                                {"question":"奶奶-帮忙做家务","type": "input-checkbox","value":false},
+                                {"question":"奶奶-托儿所/早教机构的接送","type": "input-checkbox","value":false},
+                                {"question":"奶奶-孩子生病时照顾孩","type": "input-checkbox","value":false},
+                                {"question":"奶奶-节假日带孩子玩","type": "input-checkbox","value":false},
+                                {"question":"奶奶-提供育儿知识或经验","type": "input-checkbox","value":false},
+                                {"question":"奶奶-经济上支援","type": "input-checkbox","value":false},
+                                {"question":"奶奶-没任何帮助","type": "input-checkbox","value":false},
+                                {"question":"奶奶-已离世","type": "input-checkbox","value":false}
                             ]
                         ]
                     }
+                },
+                {
+                    "index": "19",
+                    "question": "您认为在育儿中、祖父母提供帮助的原因有哪些？请选择合适的选项（可多选）",
+                    "required": true,
+                    "type": "list-checkbox",
+                    "list":[
+                        {
+                            "question":"喜欢孩子",
+                            "value":false
+                        },
+                        {
+                            "question":"单靠父母两人照顾孩子太辛苦",
+                            "value":false
+                        },
+                        {
+                            "question":"退休在家比较清闲",
+                            "value":false
+                        },
+                        {
+                            "question":"没有找到合适的托儿机构",
+                            "value":false
+                        },
+                        {
+                            "question":"不放心托儿机构或保姆/育儿嫂等外人",
+                            "value":false
+                        },
+                        {
+                            "question":"其他（请具体填写在下面的空栏）",
+                            "value":false,
+                            "otherValue":""
+                        }
+                    ]
+                },
+                {
+                    "index": "20",
+                    "question": "在养育和教育孩子方面，父母与祖父母之间有没有因为价值观或理念不同而产生过冲突？（与祖父母基本没接触、或祖父母均已过世的情况可不用回答）",
+                    "required": true,
+                    "type": "list-radio",
+                    "value": "",
+                    "list":[
+                        {
+                            "question": "基本没有"
+                        },
+                        {
+                            "question": "有时有"
+                        },
+                        {
+                            "question": "经常有"
+                        }
+                    ]
+                },
+                {
+                    "index": "21",
+                    "question": "孩子三岁前，您的理想育儿方式是怎样的？",
+                    "required": true,
+                    "type": "list-radio",
+                    "value": "",
+                    "otherValue":"",
+                    "list":[
+                        {
+                            "question": "父母自己育儿"
+                        },
+                        {
+                            "question": "父母＋祖父母共同育儿"
+                        },
+                        {
+                            "question": "父母＋托儿所等保育机构"
+                        },
+                        {
+                            "question": "父母＋育儿嫂/保姆"
+                        },
+                        {
+                            "question": "其他（请具体填写在下面的空栏"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "关于妈妈的生活质量(Part-1)",
+            "description": "以下问题是关于您最近2周内，对生活质量、健康、或生活其他方面的看法。请对每一个问题，选出最符合您目前状态的回答。如果您暂时不能确定，则头脑中的第一反应往往是最接近的答案。所有问题都请您按照自己的标准、愿望或自己的感觉来回答。注意所有问题都是您最近2周内的情况。",
+            "questions":[
+                {
+                    "index":"22",
+                    "question": "您如何评价您的生活质量？",
+                    "required": true,
+                    "type": "list-radio",
+                    "value": "",
+                    "list":[
+                        {
+                            "question": "很差"
+                        },
+                        {
+                            "question": "较差"
+                        },
+                        {
+                            "question": "一般"
+                        },
+                        {
+                            "question": "很好"
+                        }
+                    ]
+                },
+                {
+                    "index":"23",
+                    "question": "您对自己的健康状况满意吗？",
+                    "required": true,
+                    "type": "list-radio",
+                    "value": "",
+                    "list":[
+                        {
+                            "question": "非常不满意"
+                        },
+                        {
+                            "question": "不太满意"
+                        },
+                        {
+                            "question": "一般"
+                        },
+                        {
+                            "question": "比较满意"
+                        },
+                        {
+                            "question": "很满意"
+                        }
+                    ]
                 }
             ]
         }

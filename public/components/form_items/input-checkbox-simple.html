@@ -1,10 +1,11 @@
 <uku-component>
         <template>
-            <div class="form-group">
+            <div>
                 <span uku-render="cc.labelMode">
                     <label>{{cc.item.question}}</label>
                 </span>
-                <input uku-render="!(cc.labelMode)" class="form-control" uku-type="cc.item.realType" uku-name="cc.item.name" uku-value="cc.item.value" uku-selected="cc.item.checked" style="width:30%">
+                <!-- <input uku-render="!(cc.labelMode)" uku-type="cc.item.realType" uku-value="cc.item.value"> -->
+                <input uku-render="!(cc.labelMode)" type="checkbox" uku-value="cc.item.value">
             </div>
         </template>
         <script>
@@ -17,20 +18,7 @@
                                 if(value.type === "label"){
                                     this.labelMode = true;
                                 }
-                                else if (value.type.search('input-') > -1) {
-                                    var realType = value.type.split('-')[1];
-                                    value.realType = realType;
-                                }
                                 this.item = value;
-                            }
-                        }
-                    });
-
-                    Object.defineProperty(this, 'parentObject', {
-                        set: function (value) {
-                            if (value) {
-                                this.parentObject = value;
-                                console.log('a');
                             }
                         }
                     });

@@ -1,0 +1,48 @@
+<uku-component>
+        <template>
+            <div class="form-group">
+                <span>
+                    <label>{{cc.item.index}}</label>
+                    <label>{{cc.item.question}}</label>
+                </span>
+                <ul style="list-style-type:none;">
+                    <li uku-repeat="cb in cc.item.list">
+                        <input type="radio" uku-name="parent.cc.radioName" uku-value="cb.question" uku-selected="parent.cc.item.value" uku-onchange="parent.cc.changed(cb)">
+                        <label>{{cb.question}}</label>
+                    </li>
+                    <li uku-render="cc.isShowOtherInput">
+                        <input type="text" uku-disabled="!(cc.lastItem.question === cc.item.value)" uku-value="cc.item.otherValue">
+                    </li>
+                </ul>
+            </div>
+        </template>
+        <script>
+            (function () {
+                return function (uku) {
+                    this.lastItem = {};
+                    this.radioName = Math.floor(Math.random()*9999);
+                    this.isShowOtherInput = false;
+                    this.changed = function(e,item){
+                        if(this.isShowOtherInput){
+                            if(item.question !== this.lastItem.question){
+                                this.item.otherValue = "";
+                            }
+                            uku.refresh(this._alias);
+                        }
+                    };
+                    Object.defineProperty(this, 'formItem', {
+                        set: function (value) {
+                            if (value) {
+                                this.item = value;
+                                var length = this.item.list.length;
+                                this.lastItem = this.item.list[length-1];
+                                if(this.lastItem.hasOwnProperty('otherValue')){
+                                    this.isShowOtherInput = true;
+                                }
+                            }
+                        }
+                    });
+                };
+            })()
+        </script>
+    </uku-component>

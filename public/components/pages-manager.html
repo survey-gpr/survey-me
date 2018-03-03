@@ -1,7 +1,7 @@
 <uku-component>
     <template>
-        <div class="center-block" style="width:800px">
-            <page-detail uku-selected-page="cc.selectedPage"></page-detail>
+        <page-detail uku-selected-page="cc.selectedPage"></page-detail>
+        <div class="center-block" style="text-align: center"> 
             <button uku-render="!(cc.isFirstPage())" class="btn btn-lg btn-success" uku-onclick="cc.prevousPage()">上一页</button>
             <button uku-render="!(cc.isLastPage())" class="btn btn-lg btn-success" uku-onclick="cc.nextPage()">下一页</button>
             <button uku-render="cc.isLastPage()" class="btn btn-lg btn-success" uku-onclick="cc.submit()">提 交</button>

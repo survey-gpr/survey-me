@@ -15,10 +15,17 @@
                             if (this.question.type === 'select') {
                                 formItem = document.createElement("selector");                   
                             }else if(this.question.type === 'table-select'){
-                                formItem = document.createElement("advanced-table");
+                                formItem = document.createElement("table-select");
                             }
-                            else if(this.question.type === 'table-radio'){
-                                formItem = document.createElement("advanced-table2");
+                            else if(this.question.type === 'table-checkbox'){
+                                formItem = document.createElement("table-checkbox");
+                            }else if(this.question.type === 'table-radio'){
+                                formItem = document.createElement("table-radio");
+                            }else if(this.question.type === 'list-checkbox'){
+                                formItem = document.createElement("list-checkbox");
+                            }
+                            else if(this.question.type === 'list-radio'){
+                                formItem = document.createElement("list-radio");
                             }else{
                                 formItem = document.createElement("input-item");
                             }       

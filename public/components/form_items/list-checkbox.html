@@ -1,0 +1,47 @@
+<uku-component>
+        <template>
+            <div class="form-group">
+                <span>
+                    <label>{{cc.item.index}}</label>
+                    <label>{{cc.item.question}}</label>
+                </span>
+                <ul style="list-style-type:none;">
+                    <li uku-repeat="cb in cc.item.list">
+                        <input type="checkbox" uku-value="cb.value" uku-onchange="parent.cc.changed(cb)">
+                        <label>{{cb.question}}</label>
+                    </li>
+                    <li uku-render="cc.isShowOtherInput">
+                        <input type="text" uku-disabled="!(cc.lastItem.value)" uku-value="cc.lastItem.otherValue">
+                    </li>
+                </ul>
+            </div>
+        </template>
+        <script>
+            (function () {
+                return function (uku) {
+                    this.lastItem = {};
+                    this.isShowOtherInput = false;
+                    this.changed = function(e,item){
+                        if(this.isShowOtherInput && item.hasOwnProperty('otherValue')){
+                            if(item.value === false){
+                                item.otherValue = "";
+                            }
+                            uku.refresh(this._alias);
+                        }
+                    };
+                    Object.defineProperty(this, 'formItem', {
+                        set: function (value) {
+                            if (value) {
+                                this.item = value;
+                                var length = this.item.list.length;
+                                this.lastItem = this.item.list[length-1];
+                                if(this.lastItem.hasOwnProperty('otherValue')){
+                                    this.isShowOtherInput = true;
+                                }
+                            }
+                        }
+                    });
+                };
+            })()
+        </script>
+    </uku-component>

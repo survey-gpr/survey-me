@@ -47,9 +47,13 @@
     uku.registerComponent('input-item', 'components/form_items/input-item.html');
     uku.registerComponent('selector', 'components/form_items/selector.html');
     uku.registerComponent('selector-simple', 'components/form_items/selector-simple.html');
-    uku.registerComponent('input-item-simple', 'components/form_items/input-item-simple.html');
-    uku.registerComponent('advanced-table', 'components/form_items/advanced-table.html');
-    uku.registerComponent('advanced-table2', 'components/form_items/advanced-table2.html');
+    uku.registerComponent('input-checkbox-simple', 'components/form_items/input-checkbox-simple.html');
+    uku.registerComponent('input-radio-simple', 'components/form_items/input-radio-simple.html');
+    uku.registerComponent('table-select', 'components/form_items/table-select.html');
+    uku.registerComponent('table-checkbox', 'components/form_items/table-checkbox.html');
+    uku.registerComponent('table-radio', 'components/form_items/table-radio.html');
+    uku.registerComponent('list-checkbox', 'components/form_items/list-checkbox.html');
+    uku.registerComponent('list-radio', 'components/form_items/list-radio.html');
     var appCtrl = new ApplicationController(uku);
     uku.registerController('appCtrl', appCtrl);
     uku.addListener(Ukulele.INITIALIZED, function () {

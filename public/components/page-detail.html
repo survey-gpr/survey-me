@@ -1,7 +1,10 @@
 <uku-component>
     <template>
-        <h3>{{cc.page.title}}</h3>
-        <question-detail uku-repeat="question in cc.page.questions" uku-question-item="question"></question-detail>
+        <div style="padding:50px">
+            <h3>{{cc.page.title}}</h3>
+            <p>{{cc.page.description}}</p>
+            <question-detail uku-repeat="question in cc.page.questions" uku-question-item="question"></question-detail>
+        </div>
     </template>
     <script>
         (function () {
